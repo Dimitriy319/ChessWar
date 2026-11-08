@@ -3,7 +3,7 @@
 (function () {
   // Адреса сервера. Для GitHub Pages впишіть сюди адресу вашого сервера на Render
   // (наприклад 'wss://chesswar.onrender.com/socket'). Локально працює ws://localhost:8080/socket.
-  const PROD_URL = 'wss://YOUR-APP.onrender.com/socket';
+  const PROD_URL = 'wss://chesswar-7l42onrender.com/socket';
   const isLocal = ['localhost', '127.0.0.1', ''].includes(location.hostname);
   const URL_ = window.GAME_SERVER_URL || (isLocal ? 'ws://localhost:8080/socket' : PROD_URL);
 
