@@ -1,0 +1,15 @@
+{
+  "name": "chesswar-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Сервер профілів і онлайн-партій для гри «Полководці античності»",
+  "scripts": {
+    "start": "node server/upgrade.mjs && node server/index.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "pg": "^8.13.0",
+    "ws": "^8.18.0"
+  }
+}

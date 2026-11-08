@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: chesswar
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL        # рядок підключення з Neon
+        sync: false
+      - key: ALLOWED_ORIGINS     # https://ВАШ_ЛОГІН.github.io
+        sync: false
