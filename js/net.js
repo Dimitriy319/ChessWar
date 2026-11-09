@@ -6,7 +6,7 @@ function showLobby(){$('#game').style.display='none';$('#duel').style.display='n
 function startOnline(){if(conn)return;const SC=window.StarClient;if(!SC){netState='error';netErr='Мережевий модуль не завантажився.';renderLobby();return}conn=SC.createConnection({
 onConnect(s){sess=s;{const t=ls('polk-token');if(t)send({t:'resume',token:t})}flushAuth();send({t:'list'});if(curCode)send({t:'join',code:curCode});flushPending();renderLobby();render()},
 onMessage(e){handleNet(e.data)},
-onStatus(st){netState=st.state;netErr=st.error?esc(st.error.message):'';if(st.state!=='connected')guest=false;
+onStatus(st){netState=st.state;netErr=st.error?esc(st.error.message):'';if(st.state!=='connected'&&!BOT)guest=false;
 if(st.state==='replaced')netErr='Гру відкрито в іншій вкладці. Натисніть «Повторити».';
 renderLobby();if(curCode)render()}})}
 const ls=(k,v)=>{try{return v===undefined?localStorage.getItem(k):v===null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){return null}};
