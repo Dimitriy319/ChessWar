@@ -29,7 +29,7 @@ button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .pw{color:#f6f2e4;text-shadow:0 0 2px #000,0 0 2px #000,0 1px 3px #000}.pb{color:#10131a;text-shadow:0 0 2px rgba(255,255,255,.55)}
 .pk{margin:0 4px 6px 0;background:var(--line);color:var(--ink)}.pk.on{background:var(--gold);color:#1a1405}
 
-/* ===== Античний стиль: мармур, колони, меандр ===== */
+/* ===== РђРЅС‚РёС‡РЅРёР№ СЃС‚РёР»СЊ: РјР°СЂРјСѓСЂ, РєРѕР»РѕРЅРё, РјРµР°РЅРґСЂ ===== */
 :root{--pillar:linear-gradient(#e6e2d6,#b7b3a6) top/100% 20px no-repeat,linear-gradient(#b7b3a6,#e6e2d6) bottom/100% 18px no-repeat,linear-gradient(90deg,rgba(0,0,0,.55),transparent 26%,transparent 74%,rgba(0,0,0,.55)) 0 20px/100% calc(100% - 38px) no-repeat,repeating-linear-gradient(90deg,#f0ede3 0 6px,#c4c1b5 6px 8px) 0 20px/100% calc(100% - 38px) no-repeat;--key:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='16'%3E%3Cpath d='M0 14h6V4h12v8h-6V8' fill='none' stroke='%23c9a24a' stroke-width='2'/%3E%3C/svg%3E")}
 body{background:radial-gradient(900px 500px at 50% -8%,#24476a 0,transparent 65%),linear-gradient(160deg,#0b1a27,#0e2132 55%,#0a1722)}
 .col{width:46px;flex:none;background:var(--pillar);box-shadow:0 0 16px rgba(0,0,0,.6)}
@@ -67,12 +67,20 @@ button.big{width:100%;padding:14px;font-size:16px;letter-spacing:.12em}
 .pb{background-image:linear-gradient(110deg,transparent 40%,rgba(222,228,234,.4) 41.5%,transparent 43.5%),linear-gradient(70deg,transparent 62%,rgba(201,162,74,.55) 63%,transparent 65%),radial-gradient(circle at 30% 22%,#4a525c 0,#242a32 50%,#0d1015 100%);-webkit-text-stroke:.6px #b9c2cb;filter:drop-shadow(0 0 1px rgba(255,255,255,.55)) drop-shadow(0 3px 3px rgba(0,0,0,.6))}
 #end{background:radial-gradient(ellipse at 50% 30%,#1d3a57,#08121c 75%)}
 
-/* Квадратна карта: не виходить за висоту екрана */
-#map{width:min(calc(100% - 20px),calc(100vh - 170px));min-width:260px;margin:14px auto}
-
-/* Підписи полководців на карті: жетон із балансом зверху, ім'я смужкою внизу клітинки (все всередині клітинки) */
-#map{container-type:inline-size}
-.g{inset:5% 15% 33% 15%;z-index:1;font:700 10px system-ui;font:700 clamp(8px,2.1cqw,15px) system-ui}
-.nm{position:absolute;left:2px;right:2px;bottom:2px;z-index:2;padding:1px 2px;border-radius:3px;border-bottom:2px solid var(--me);background:rgba(6,14,22,.82);color:#ece8da;text-align:center;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:600 8px/1.25 system-ui;font:600 clamp(5px,1.3cqw,11px)/1.25 system-ui}
-.nm.foe{border-bottom-color:var(--foe)}.nm.dn,.g.dn{opacity:.6}
-@container (max-width:560px){.nm{display:none}.g{inset:12%}}
+/* ===== Р’С–Р·СѓР°Р»СЊРЅС– РїРѕРєСЂР°С‰РµРЅРЅСЏ ===== */
+.emblem{display:block;width:min(86%,340px);height:auto;margin:4px auto 0;filter:drop-shadow(0 8px 12px rgba(0,0,0,.55))}
+/* РїС–РґРїРёСЃРё РїРѕР»РєРѕРІРѕРґС†С–РІ РЅР° РєР°СЂС‚С– */
+.t.hg{overflow:visible;z-index:2}
+.t.hg .g{inset:auto;top:5%;left:50%;width:64%;aspect-ratio:1;transform:translateX(-50%)}
+.gn{position:absolute;left:50%;bottom:-2px;transform:translateX(-50%);white-space:nowrap;pointer-events:none;font:700 clamp(7px,1.7vw,11px)/1.15 system-ui,sans-serif;padding:1px 4px;border-radius:3px;background:rgba(8,17,27,.86);border:1px solid var(--me);color:#d8eefa;z-index:3}
+.gn.foe{border-color:var(--foe);color:#fbd9d5}
+.gn.dn{opacity:.75}
+/* РїС–РґСЃРІС–С‡СѓРІР°РЅРЅСЏ РѕСЃС‚Р°РЅРЅСЊРѕРіРѕ С…РѕРґСѓ СЃСѓРїРµСЂРЅРёРєР° */
+.c>span{position:relative;z-index:1}
+.c.lf::before,.c.lt::before{content:"";position:absolute;inset:0;background:rgba(232,128,52,.30);z-index:0}
+.c.lt::before{background:rgba(232,128,52,.50);box-shadow:inset 0 0 0 3px rgba(240,160,80,.85)}
+#dp .rsg{margin-top:4px}
+.gn.ra{left:auto;right:0;transform:none}
+.gn.la{left:0;transform:none}
+#dp .rsg{text-align:center}
+.gn.up{top:auto;bottom:calc(100% - 1px)}
